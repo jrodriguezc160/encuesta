@@ -1,6 +1,10 @@
 :root {
   --black: #222222;
   --gray-1: gray;
+  --gray-2: gainsboro;
+  --red-1: #fd1620;
+  --red-2: #ffd2d8;
+  --white: whitesmoke;
 }
 
 body {
@@ -24,9 +28,9 @@ code {
   justify-content: space-between;
   align-items: center;
   margin: 1vw;
-  border: .5px solid gainsboro;
+  border: .5px solid var(--gray-2);
   border-radius: 8px;
-  background-color: whitesmoke;
+  background-color: var(--white);
   width: 98vw;
   height: 4vw;
 
@@ -39,8 +43,10 @@ code {
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all 0.3s ease-in-out;
-      margin: 1vw;
+      transition: all 0.5s ease-in-out;
+      margin: 1vw .5vw;
+      border-radius: 6px;
+      padding: .5vw 1vw;
       height: 2vw;
       color: var(--gray-1);
       text-decoration: none;
@@ -51,8 +57,13 @@ code {
       }
     }
 
+    a.no-bg:hover {
+      background-color: #ff000000;
+    }
+
     a:hover {
-      color: var(--black);
+      background-color: var(--red-1);
+      color: var(--white);
 
       img {
         scale: 1.05;
