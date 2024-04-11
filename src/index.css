@@ -2,8 +2,10 @@
   --black: #222222;
   --gray-1: gray;
   --gray-2: gainsboro;
+  --gray-3: #e8e8e8;
   --red-1: #fd1620;
-  --red-2: #ffd2d8;
+  --red-2: #fca1ad;
+  --red-3: #ffd8dd;
   --white: whitesmoke;
 }
 
@@ -23,16 +25,33 @@ code {
     monospace;
 }
 
+.navbar:hover {
+  /* scale: 1.005; */
+  filter: drop-shadow(0 8px 8px var(--gray-2));
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1vw;
+  filter: drop-shadow(0 4px 4px var(--gray-3));
+  transition: all 0.5s ease-in-out;
+  margin: 1rem;
   border: .5px solid var(--gray-2);
   border-radius: 8px;
   background-color: var(--white);
-  width: 98vw;
+  width: calc(100% - 2rem);
   height: 4vw;
+  min-height: 3rem;
+
+  .responsive {
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    overflow: hidden;
+  }
 
   div {
     display: flex;
@@ -43,11 +62,11 @@ code {
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all 0.5s ease-in-out;
-      margin: 1vw .5vw;
+      transition: all 0.25s ease-in-out;
+      margin: 1vw .75vw;
       border-radius: 6px;
       padding: .5vw 1vw;
-      height: 2vw;
+      height: 1.5vw;
       color: var(--gray-1);
       text-decoration: none;
 
@@ -57,17 +76,57 @@ code {
       }
     }
 
+    a.no-bg {
+      background-color: #ff000000;
+    }
+
     a.no-bg:hover {
       background-color: #ff000000;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
+      filter: drop-shadow(0 2px 4px var(--gray-2));
+      /* background-color: var(--red-3);
+      color: var(--red-1); */
+
       background-color: var(--red-1);
       color: var(--white);
 
       img {
-        scale: 1.05;
+        scale: 1.2;
       }
+    }
+  }
+}
+
+@media (max-width: 512px) {
+  .navbar {
+    position: absolute;
+    bottom: 0;
+    border-radius: 12px;
+
+    .responsive {
+      opacity: 1;
+      margin: 1rem .75rem;
+      padding: .5vw 1vw;
+      width: fit-content;
+      height: 2rem;
+      overflow: visible;
+    }
+
+    a,
+    div>a {
+      transition: all 0s ease-in-out;
+      height: 100%;
+    }
+
+    div>a {
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      width: 0;
+      overflow: hidden;
     }
   }
 }

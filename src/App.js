@@ -4,6 +4,7 @@ import './index.css';
 function App () {
   return (
     <div>
+
       <Navbar />
     </div>
   );
