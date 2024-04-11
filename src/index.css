@@ -7,6 +7,7 @@
   --red-2: #fca1ad;
   --red-3: #ffd8dd;
   --white: whitesmoke;
+  --green-1: #4db44d;
 }
 
 body {
@@ -32,12 +33,15 @@ code {
 
 .navbar {
   display: flex;
+  position: fixed;
+  top: 0;
   justify-content: space-between;
   align-items: center;
+  z-index: 5;
   filter: drop-shadow(0 4px 4px var(--gray-3));
   transition: all 0.5s ease-in-out;
   margin: 1rem;
-  border: .5px solid var(--gray-2);
+  border: 1px solid var(--gray-3);
   border-radius: 8px;
   background-color: var(--white);
   width: calc(100% - 2rem);
@@ -100,10 +104,14 @@ code {
   }
 }
 
+.textoTabla {
+  margin: 7.5rem 7.5rem 0rem 7.5rem;
+}
+
 @media (max-width: 512px) {
   .navbar {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    top: calc(100% - 5rem);
     border-radius: 12px;
 
     .responsive {
@@ -129,23 +137,53 @@ code {
       overflow: hidden;
     }
   }
-}
 
-.textoTabla {
-  margin: 2.5rem 9.5rem;
+  .textoTabla {
+    margin: 2rem 2rem 0rem 2rem;
+  }
+
+  /* NO FUNCIONA EL @media */
+  .componenteTabla {
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+
+    table {
+      width: 100vh;
+    }
+  }
 }
 
 .tablaEnc {
   box-sizing: border-box;
   border-collapse: collapse;
-  background-color: var(--white);
+  background-color: white;
   width: 100%;
   height: 100%;
   color: var(--black);
   font-size: 12px;
 
   tr {
-    border: 1px solid var(--gray-3);
+    transition: all 0.25s ease-in-out;
+    border: 1px solid var(--gray-2);
+    border-right-color: white;
+    border-left-color: white;
+  }
+
+  tr:hover {
+    border-right-color: var(--white);
+    border-left-color: var(--white);
+    background-color: var(--white);
+  }
+
+  tr.tituloApartados {
+    border-color: var(--white);
+    border-bottom-color: var(--gray-3);
+  }
+
+  tr.tituloApartados:hover {
+    border-color: var(--gray-2);
+    background-color: var(--gray-2);
   }
 
   td {
@@ -154,7 +192,7 @@ code {
 }
 
 .numero {
-  max-width: 10px;
+  width: 15px;
   text-align: center;
 }
 
@@ -169,7 +207,7 @@ code {
 
 .tituloApartados {
   margin: 1rem;
-  background-color: var(--gray-3);
+  background-color: var(--white);
   font-size: 15px;
 }
 
@@ -182,7 +220,6 @@ code {
 }
 
 .descripcion {
-  width: 95%;
 
   p {
     color: #676356;
@@ -196,7 +233,7 @@ td.textareaDate {
   textarea {
     margin: .5rem;
     outline: none;
-    border: 1px solid var(--gray-2);
+    border: 1px solid var(--gray-3);
     border-radius: 8px;
     padding: .5rem;
     width: calc(100% - 2rem);
@@ -209,8 +246,63 @@ td.textareaDate {
   justify-content: center;
   align-items: center;
   filter: drop-shadow(0 4px 4px var(--gray-3));
-  margin: 1rem;
+  box-sizing: border-box;
+  margin: 2rem;
+  border: 1px solid var(--gray-3);
   border-radius: 12px;
-  width: calc(100% - 2rem);
+  width: calc(100% - 4rem);
   overflow: hidden;
+}
+
+.send-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid var(--gray-3);
+  border-radius: 8px;
+  background-color: var(--white);
+  padding: 0 16px;
+  height: 26px;
+}
+
+.send-btn:hover {
+  filter: drop-shadow(0 2px 4px var(--gray-2));
+  border-color: var(--green-1);
+  background-color: var(--green-1);
+  color: var(--white);
+}
+
+.cancel-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid var(--gray-3);
+  border-radius: 8px;
+  background-color: var(--white);
+  padding: 0 16px;
+  height: 26px;
+}
+
+.cancel-btn:hover {
+  filter: drop-shadow(0 2px 4px var(--gray-2));
+  border-color: var(--red-1);
+  background-color: var(--red-1);
+  color: var(--white);
+}
+
+.selectTabla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 1px solid var(--gray-3);
+  border-radius: 8px;
+  background-color: var(--white);
+  padding: 0 8px;
+  height: 26px;
 }

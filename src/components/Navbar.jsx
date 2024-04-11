@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
       </div> */}
 
-      <div className='navbar' style={{ border: 'none' }}>
+      <div className='navbar' >
         <div>
           <a href='../App.js' className='responsive' >
             <img src='https://eventos.dip-caceres.es/wp-content/uploads/2023/01/Favicon-Dip-512x512-1.png' alt='' />

@@ -13,7 +13,7 @@ const TablaEncuesta = () => {
   return (
     <div className='componenteTabla'>
       <div className="textoTabla">
-        <h3 style={{ borderBottom: "4px solid #e2dfd6", borderTop: "2px solid #e2dfd6", width: '95%' }}>Encuesta de Satisfacción</h3>
+        <h3 >Encuesta de Satisfacción</h3>
         <div className='descripcion'>
           <p>El cuestionario que figura a continuación se realiza para tratar de medir su satisfacción con respecto al <b>servicio de formación</b> o <b>acción formativa</b> en la que usted participa o ha participado.</p>
           <p>Como verá se miden diferentes aspectos a los que usted debe responder marcando un número entre el 1 y el 5, siendo 1 la mínima satisfación y el 5 la máxima.</p>
@@ -26,7 +26,7 @@ const TablaEncuesta = () => {
         <table className='tablaEnc'>
 
           <tbody >
-            <tr className='tituloApartados'>
+            <tr className='tituloApartados' >
               <td colSpan={"6"}>
                 <p>1 - ORGANIZACIÓN</p>
               </td>
@@ -1861,8 +1861,8 @@ const TablaEncuesta = () => {
               <td>
                 <p>45 -En resumen, ¿qué mejoraría de esta acción formativa?</p>
               </td>
-              <td colSpan={"5"}>
-                <textarea name="mejorias" id="" cols="17" rows="7"></textarea>
+              <td colSpan={"5"} className='textareaDate'>
+                <textarea name="mejorias" id="" cols="15" rows="5"></textarea>
               </td>
             </tr>
             <tr className='tituloApartados'>
@@ -1875,22 +1875,27 @@ const TablaEncuesta = () => {
                 <p>46 -Por último, Además de esta acción o una edición más avanzada, qué acciones formativas sugiere para futuros planes y qué otras observaciones haría</p>
               </td>
               <td colSpan={"5"} className='textareaDate'>
-                <textarea name="" id="" cols="17" rows="5"></textarea>
+                <textarea name="acciones-formativas" id="" cols="15" rows="5"></textarea>
               </td>
             </tr>
             <tr>
               <td>
                 <p>Acepta publicar sus datos personales dentro de la evaluación:</p>
               </td>
-              <td colSpan={"5"}>
-                <select name="publico" id="">
+              <td colSpan={"6"}>
+                <select name="publico" id="" className='selectTabla'>
                   <option value="Si">Sí</option>
                   <option value="No">No</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <input type="submit" value={"Enviar"} />
+              <td colSpan={'6'}>
+                <div style={{ display: 'flex', gap: '.5rem', padding: '.5rem 0' }}>
+                  <input type="submit" value={"Enviar"} className='send-btn' />
+                  <input type="submit" value={"Cancelar"} className='cancel-btn' />
+                </div>
+              </td>
             </tr>
             {/* Puedes agregar más preguntas siguiendo la misma estructura */}
           </tbody>
@@ -1899,7 +1904,7 @@ const TablaEncuesta = () => {
       <div style={{ height: '30px' }}>
 
       </div>
-    </div>
+    </div >
   );
 };
 
