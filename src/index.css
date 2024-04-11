@@ -130,3 +130,87 @@ code {
     }
   }
 }
+
+.textoTabla {
+  margin: 2.5rem 9.5rem;
+}
+
+.tablaEnc {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  background-color: var(--white);
+  width: 100%;
+  height: 100%;
+  color: var(--black);
+  font-size: 12px;
+
+  tr {
+    border: 1px solid var(--gray-3);
+  }
+
+  td {
+    padding: .25rem 1rem;
+  }
+}
+
+.numero {
+  max-width: 10px;
+  text-align: center;
+}
+
+.inputDate {
+  padding: 0 0 !important;
+  text-align: center;
+}
+
+.componenteTabla {
+  width: 100%;
+}
+
+.tituloApartados {
+  margin: 1rem;
+  background-color: var(--gray-3);
+  font-size: 15px;
+}
+
+.inputRadio,
+.inputRadio>input[type=radio] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.descripcion {
+  width: 95%;
+
+  p {
+    color: #676356;
+    font-size: 12px;
+  }
+}
+
+td.textareaDate {
+  padding: 0;
+
+  textarea {
+    margin: .5rem;
+    outline: none;
+    border: 1px solid var(--gray-2);
+    border-radius: 8px;
+    padding: .5rem;
+    width: calc(100% - 2rem);
+    resize: none;
+  }
+}
+
+.tableForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 4px 4px var(--gray-3));
+  margin: 1rem;
+  border-radius: 12px;
+  width: calc(100% - 2rem);
+  overflow: hidden;
+}
